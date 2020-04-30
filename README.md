@@ -1,8 +1,21 @@
 # grapheme-breaker-mjs
 
+A JavaScript implementation for web apps and Node.js of the Unicode grapheme cluster breaking algorithm ([UAX #29](http://www.unicode.org/reports/tr29/#Grapheme_Cluster_Boundaries))
+
 Support Unicode 13.0.0  
 This is a fork of [`grapheme-breaker-u10-0`](https://github.com/yumetodo/grapheme-breaker-u10-0). Support Unicode 10.0 and emoji v5 by [@vaskevich](https://github.com/vaskevich)(publishd by [@yumetodo](https://github.com/yumetodo)).  
 The base project is [`grapheme-breaker`](https://github.com/foliojs/grapheme-breaker) by [@devongovett](https://github.com/devongovett)
+
+## for Web
+
+test page  
+https://taisukef.github.io/grapheme-breaker-mjs/  
+
+```javascript
+import GraphemeBreaker from 'https://taisukef.github.io/grapheme-breaker-mjs/src/GraphemeBreaker.mjs'
+
+console.log(GraphemeBreaker.break('😜🇺🇸👍')) // => [ '😜', '🇺🇸', '👍' ]
+```
 
 ## Installation
 
@@ -10,25 +23,10 @@ You can install via npm
 
     npm i grapheme-breaker-mjs
 
-## Overveiw
-
-A JavaScript implementation for web apps and Node.js of the Unicode grapheme cluster breaking algorithm ([UAX #29](http://www.unicode.org/reports/tr29/#Grapheme_Cluster_Boundaries))
-
-> It is important to recognize that what the user thinks of as a “character”—a basic unit of a writing system for a
-> language—may not be just a single Unicode code point. Instead, that basic unit may be made up of multiple Unicode
-> code points. To avoid ambiguity with the computer use of the term character, this is called a user-perceived character.
-> For example, “G” + acute-accent is a user-perceived character: users think of it as a single character, yet is actually
-> represented by two Unicode code points. These user-perceived characters are approximated by what is called a grapheme cluster,
-> which can be determined programmatically.
-
 ## Example
 
-test page  
-https://taisukef.github.io/grapheme-breaker-mjs/  
-
 ```javascript
-import GraphemeBreaker from 'https://taisukef.github.io/grapheme-breaker-mjs/src/GraphemeBreaker.mjs'
-//import GraphemeBreaker from './src/GraphemeBreaker.mjs'
+import GraphemeBreaker from 'grapheme-breaker-mjs'
 
 // break a string into an array of grapheme clusters
 
