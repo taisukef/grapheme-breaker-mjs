@@ -1,6 +1,6 @@
 {
   "name": "grapheme-breaker-mjs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An implementation of the Unicode grapheme cluster breaking algorithm (UAX #29)",
   "main": "src/GraphemeBreaker",
   "directories": {
