@@ -1,14 +1,14 @@
 import fs from 'fs'
 import fetch from 'node-fetch'
-import UnicodeTrieBuilder from 'unicode-trie/builder.js'
+import UnicodeTrieBuilder from './unicode-trie/builder.js'
 
-const main = async function() {
+const main = async function () {
   const UNICODE_VERSION = '10.0.0'
   const url = `https://www.unicode.org/Public/${UNICODE_VERSION}/ucd/auxiliary/GraphemeBreakProperty.txt`
   console.log(url)
 
   const data = await (await fetch(url)).text()
-  
+
   const re = /^([0-9A-F]+)(?:\.\.([0-9A-F]+))?\s*;\s*([A-Za-z_]+)/gm
   let nextClass = 1
   const classes = {
@@ -16,11 +16,14 @@ const main = async function() {
   }
   const trie = new UnicodeTrieBuilder(classes.Other)
   // collect entries in the table into ranges to keep things smaller.
-  let match = null
-  while (match = re.exec(data)) {
+  for (;;) {
+    const match = re.exec(data)
+    if (!match) {
+      break
+    }
     const start = match[1]
     const ref = match[2]
-    const end = ref ? ref : start
+    const end = ref || start
     const type = match[3]
     if (classes[type] == null) {
       classes[type] = nextClass++
