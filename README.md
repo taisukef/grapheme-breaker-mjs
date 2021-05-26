@@ -1,11 +1,11 @@
 # grapheme-breaker-mjs
 
-A JavaScript (ES Module) implementation for web apps and Node.js of the Unicode 13.0.0 grapheme cluster breaking algorithm ([UAX #29](http://www.unicode.org/reports/tr29/#Grapheme_Cluster_Boundaries))
+A JavaScript (ES Module) implementation for web apps, Deno and Node.js of the Unicode 13.0.0 grapheme cluster breaking algorithm ([UAX #29](http://www.unicode.org/reports/tr29/#Grapheme_Cluster_Boundaries))
 
 This is a fork of [`grapheme-breaker-u10-0`](https://github.com/yumetodo/grapheme-breaker-u10-0). Support Unicode 10.0 and emoji v5 by [@vaskevich](https://github.com/vaskevich)(publishd by [@yumetodo](https://github.com/yumetodo)).  
 The base project is [`grapheme-breaker`](https://github.com/foliojs/grapheme-breaker) by [@devongovett](https://github.com/devongovett)
 
-## for Web
+## for Web and Deno
 
 test page  
 https://taisukef.github.io/grapheme-breaker-mjs/  
